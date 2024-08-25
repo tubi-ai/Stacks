@@ -1,0 +1,33 @@
+public class stacks {
+    int [] array;
+    int size;
+    int indis;
+
+    public stacks(int size) {
+        this.size = size;
+        array = new int[size];
+        indis =-1;
+    }
+    void push(int data){
+        if (isFull())
+            System.out.println("The array is full");
+        else {
+            indis++;
+            array[indis] = data;
+        }
+    }
+    int pop(){
+        if (! isEmpty()){
+            return array[-- indis];
+        } else {
+            System.out.println("The array is empty");
+        } return -1;
+    }
+    boolean isFull(){
+        return (indis == size);
+    }
+    boolean isEmpty(){
+        return (indis == -1);
+
+    }
+}
