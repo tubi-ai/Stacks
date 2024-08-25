@@ -1,0 +1,40 @@
+public class newstack {
+        int cnt;
+        int size;
+        node top;
+
+        public newstack(int size) {
+            this.size = size;
+            cnt = 0;
+            top = null;
+        }
+        void push(int data){
+            node element = new node(data);
+            if (isFull())
+                System.out.println("The stack is full");
+            else {
+                if (isEmpty()){
+                    top = element;
+                } else {
+                    element.next = top;
+                    top = element;
+                }
+            }
+        }
+        void pop(){
+            if (! isEmpty()){
+                top = top.next;
+                cnt--;
+            } else {
+                System.out.println("The stack is empty");
+            }
+        }
+        boolean isFull(){
+            return (cnt == size);
+        }
+        boolean isEmpty(){
+            return (cnt == 0);
+
+        }
+    }
+
